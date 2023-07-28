@@ -1,13 +1,22 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
 
-  for(let i = 0; i < array.length - 1; i++) {
+  /* for(let i = 0; i < array.length - 1; i++) {
     for(let j = i + 1; j < array.length; j++) {
       if (array[i] + array[j] === target) {
         return true
       }
     }
   }
+  return false */
+  obj = {}
+  for(const item of array) {
+    if (target - item in obj) {
+      return true
+    }
+    obj[item] = item
+  }
+
   return false
 
 }
